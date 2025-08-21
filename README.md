@@ -10,7 +10,7 @@ The project is inspired by real-world data engineering scenarios and emphasizes 
 
 ## 🏗️ Architecture
 
-![Architecture Diagram](./images/architecture.png) <!-- Replace with your actual diagram -->
+![Architecture Diagram](arch.jpg) 
 
 **Layers:**
 - **Bronze** → Raw ingestion layer (stores unprocessed data).  
@@ -29,23 +29,13 @@ The project is inspired by real-world data engineering scenarios and emphasizes 
 
 ---
 
-## 🔑 Key Features
-- ✅ **Incremental Data Pipelines** using CDC & parameterized pipelines in ADF.  
-- ✅ **Medallion Architecture Implementation** (Bronze → Silver → Gold).  
-- ✅ **Dimensional Modeling (Star Schema)** with Fact & Dimension tables.  
-- ✅ **Slowly Changing Dimensions (SCD) Management** for historical tracking.  
-- ✅ **Unity Catalog Integration** for governance & secure data access.  
-- ✅ **ETL/ELT Pipelines** automated via ADF & Databricks.  
-- ✅ **BI Integration** with Power BI dashboards.  
-- ✅ **Debugging & Error Handling** strategies for real-world data issues.  
-
----
-
 ## ⚙️ Project Workflow
 
 1. **Data Ingestion (Bronze Layer)**  
    - Raw files ingested into **Azure Data Lake**.  
-   - ADF pipelines scheduled for ingestion.  
+   - ADF pipelines scheduled for ingestion.
+
+     ![Injestion Diagram](adf.jpg)  
 
 2. **Data Transformation (Silver Layer)**  
    - Cleansing, deduplication, and transformations in **Databricks (PySpark)**.  
@@ -53,7 +43,9 @@ The project is inspired by real-world data engineering scenarios and emphasizes 
 
 3. **Dimensional Modeling (Gold Layer)**  
    - Designed **Star Schema** with Fact & Dimension tables.  
-   - Handled **Slowly Changing Dimensions (SCD Type 2)**.  
+   - Handled **Slowly Changing Dimensions (SCD Type 2)**.
+  
+     ![Dimension Model](dim.jpg) 
 
 4. **Data Governance**  
    - Managed access & lineage with **Databricks Unity Catalog**.  
